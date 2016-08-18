@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactDOMServer from 'react-dom/server'
 import {Router, RouterContext, match, createMemoryHistory} from 'react-router'
-import Routes from '../../routes'
+import Routes from './routes'
 import Main from '../../templates/Main'
 
 module.exports = function(locals, callback){

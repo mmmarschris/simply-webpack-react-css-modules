@@ -1,7 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
-const data = require('./src/assets/js/data.js');
+const data = require('./data.js');
 
 module.exports = {
   entry:  {
