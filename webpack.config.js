@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const data = require('./data.js');
 
@@ -33,6 +34,11 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('main.css'),
-    new StaticSiteGeneratorPlugin('main', data.routes, data)
+    new StaticSiteGeneratorPlugin('main', data.routes, data),
+    new BrowserSyncPlugin({
+        host: 'localhost',
+        port: 3000,
+        proxy: 'http://localhost:8080/'
+    })
   ]
 };
