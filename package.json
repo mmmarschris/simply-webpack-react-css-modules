@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack && open dist/index.html"
+    "dev": "webpack-dev-server --progress --colors",
+    "start": "webpack && npm run dev"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,8 @@
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
+    "browser-sync": "^2.14.0",
+    "browser-sync-webpack-plugin": "^1.1.2",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "react": "^15.3.0",
@@ -24,7 +27,8 @@
     "static-site-generator-webpack-plugin": "^2.1.0",
     "style-loader": "^0.13.1",
     "susy": "^2.2.12",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "node-sass": "^3.8.0"
