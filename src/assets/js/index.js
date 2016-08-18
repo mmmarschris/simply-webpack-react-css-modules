@@ -1,14 +1,8 @@
-require("./alert.js");
+import React from 'react'
+import ReactDOMServer from 'react-dom/server'
+import Main from '../../templates/Main.js'
 
-import greetings from './robot.js'
-document.write(greetings("Affirmative", "Dave"));
-
-import styles from '../scss/app.scss'
-
-let element = `
-  <div class="${styles.element}">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur laudantium recusandae itaque libero velit minus ex reiciendis veniam. Eligendi modi sint delectus beatae nemo provident ratione maiores, voluptatibus a tempore!</p>
-  </div>
-`
-
-document.write(element);
+module.exports = function render(locals, callback) {
+  var html = ReactDOMServer.renderToStaticMarkup(React.createElement(Main, locals))
+  callback(null, '<!DOCTYPE html>' + html)
+}
